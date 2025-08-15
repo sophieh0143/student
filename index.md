@@ -1,12 +1,12 @@
 ---
 layout: base
-title: I'm Sophie Haas
+title: I'm [Sophie Haas]
 hide: true
 ---
 
 ### Me and Team
 
-Hi! My name is Sophie Haas.
+Hi! My name is Sophie Haas
 
 | Role         | Name     | Repo Location                       | Stream                | Repo Name |
 |--------------|----------|-------------------------------------|-----------------------|-----------|
