@@ -28,7 +28,7 @@ Hi! My name is Sophie Haas
 <a href="https://open-coding-society.github.io/student">
     <img src="https://img.shields.io/badge/GitHub%20Pages-327FC7?logo=github&logoColor=white" alt="GitHub Pages">
 </a>
-<a href="https://kasm.opencodingsociety.com/" class="button small" style="background-color: #6b4bd3ff">
+<a href="https://kasm.opencodingsociety.com/" class="button small" style="background-color: #120440ff">
     KASM
 </a>
 <<<<<<< HEAD
