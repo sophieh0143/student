@@ -33,10 +33,10 @@ Hi! My name is Sophie Haas
 </a>
 <<<<<<< HEAD
 <a href="https://vscode.dev/" class="button small" style="background-color: #6dc3f9ff">
-    <span style="color: #031c25ff">VSCODE</span>
+    <span style="color: #0e4b62ff">VSCODE</span>
 =======
 <a href="https://vscode.dev/" class="button small" style="background-color: #070a36ff">
-    <span style="color: #02001bff">VSCODE</span>
+    <span style="color: #27217dff">VSCODE</span>
 >>>>>>> 966bd84b27bb21b47335e4c48a4386fb7c7b439d
 </a>
 
@@ -44,7 +44,7 @@ Hi! My name is Sophie Haas
 
 ### Class Progress
 
-<a href="{{site.baseurl}}/snake" class="button small" style="background-color: #6b4bd3ff">
+<a href="{{site.baseurl}}/snake" class="button small" style="background-color: #47e159ff">
     Snake Game
 </a>
 <a href="{{site.baseurl}}/turtle" class="button small" style="background-color: #2A7DB1">
