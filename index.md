@@ -31,8 +31,8 @@ Hi! My name is Sophie Haas
 <a href="https://kasm.opencodingsociety.com/" class="button small" style="background-color: #6b4bd3ff">
     KASM
 </a>
-<a href="https://vscode.dev/" class="button small" style="background-color: #d38a4bff">
-    <span style="color: #FFFFFF">VSCODE</span>
+<a href="https://vscode.dev/" class="button small" style="background-color: #b0b5ffff">
+    <span style="color: #0a054bff">VSCODE</span>
 </a>
 
 <br>
