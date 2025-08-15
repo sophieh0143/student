@@ -36,7 +36,7 @@ Hi! My name is Sophie Haas
     <span style="color: #031c25ff">VSCODE</span>
 =======
 <a href="https://vscode.dev/" class="button small" style="background-color: #070a36ff">
-    <span style="color: #0a054bff">VSCODE</span>
+    <span style="color: #02001bff">VSCODE</span>
 >>>>>>> 966bd84b27bb21b47335e4c48a4386fb7c7b439d
 </a>
 
