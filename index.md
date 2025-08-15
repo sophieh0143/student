@@ -1,6 +1,6 @@
 ---
 layout: base
-title: I'm [Sophie Haas]
+title: I'm Sophie Haas
 hide: true
 ---
 
