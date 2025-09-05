@@ -1,14 +1,18 @@
 ---
+# YML definition of metadata for file, used by GH Pages
 layout: base
 title: Background with Object
 description: Use JavaScript to have an in motion background.
+# These are locations of images in this Game
 sprite: images/platformer/sprites/flying-ufo.png
 background: images/platformer/backgrounds/alien_planet1.jpg
 permalink: /background
 ---
 
+<!-- HTML for where Game is stored  -->
 <canvas id="world"></canvas>
 
+<!-- Script logic for the Game -->
 <script>
   const canvas = document.getElementById("world");
   const ctx = canvas.getContext('2d');
@@ -76,8 +80,12 @@ permalink: /background
       }
     }
 
+    /* Game World is master class/object for the entire game
+    * the game loop is inside
+    */
     class GameWorld {
       static gameSpeed = 5;
+      // images enter the world
       constructor(backgroundImg, spriteImg) {
         this.canvas = document.getElementById("world");
         this.ctx = this.canvas.getContext('2d');
@@ -91,11 +99,13 @@ permalink: /background
         this.canvas.style.left = `0px`;
         this.canvas.style.top = `${(window.innerHeight - this.height) / 2}px`;
 
+        // Game objects are created
         this.objects = [
          new Background(backgroundImg, this),
          new Player(spriteImg, this)
         ];
       }
+      // This keeps game alive and running
       gameLoop() {
         this.ctx.clearRect(0, 0, this.width, this.height);
         for (const obj of this.objects) {
@@ -110,5 +120,7 @@ permalink: /background
     }
 
     const world = new GameWorld(backgroundImg, spriteImg);
+
+    // starts the game world
     world.start();
   }
