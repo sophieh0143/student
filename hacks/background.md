@@ -6,7 +6,7 @@ sprite: images/platformer/sprites/flying-ufo.png
 background: images/platformer/backgrounds/alien_planet1.jpg
 permalink: /background/
 ---
-
+//World equals background.alien.plant.jpg
 <canvas id="world"></canvas>
 
 <script>
@@ -38,7 +38,7 @@ permalink: /background/
 
  function startGameWorld() {
    if (imagesLoaded < 2) return;
-
+//game object is flying-ufo.png
    class GameObject {
      constructor(image, width, height, x = 0, y = 0, speedRatio = 0) {
        this.image = image;
@@ -54,7 +54,7 @@ permalink: /background/
        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
      }
    }
-
+//Background image repeats itself, through background extends--->
    class Background extends GameObject {
      constructor(image, gameWorld) {
        // Fill entire canvas
@@ -83,7 +83,7 @@ permalink: /background/
      }
      update() {
        console.log("Player.update is running without sine wave");
-
+//Move with arrow keys using ArrowUp, ArrowDown, ArrowLeft, and ArrowRight, to move the flying-ufo.png up, down, left, right.
        // Move with arrow keys
        if (keys["ArrowUp"]) this.y -= this.speed;
        if (keys["ArrowDown"]) this.y += this.speed;
@@ -102,7 +102,7 @@ permalink: /background/
        //this.frame++;
      }
    }
-
+//The gamworld speed controls how the object and background moves. STATIC means not moving, unlike the background and sprite (flying-ufo.png)
    class GameWorld {
      static gameSpeed = 5;
      constructor(backgroundImg, spriteImg) {
