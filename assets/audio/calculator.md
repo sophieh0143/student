@@ -78,6 +78,43 @@ HTML implementation of the calculator.
 
 <!-- JavaScript (JS) implementation of the calculator. -->
 <script>
+// Select all calculator buttons
+const buttons = document.querySelectorAll(".calculator-number, .calculator-operation, .calculator-clear, .calculator-equals");
+const container = document.getElementById("animation");
+
+// When any button is clicked, spawn a cat
+buttons.forEach(button => {
+  button.addEventListener("click", function(e) {
+    spawnCat(e.clientX, e.clientY);
+  });
+});
+
+// Function to create cat emoji
+function spawnCat(x, y) {
+  const cat = document.createElement("span");
+  cat.textContent = "🐱";
+  cat.style.position = "absolute";
+  cat.style.left = (x - 10) + "px"; 
+  cat.style.top = (y - 10) + "px";
+  cat.style.fontSize = "2rem";
+  cat.style.pointerEvents = "none"; // so it doesn’t block clicks
+  container.appendChild(cat);
+
+  // Animate the cat upward like a droplet
+  let rise = 0;
+  const interval = setInterval(() => {
+    rise += 2;
+    cat.style.top = (y - 10 - rise) + "px";
+    cat.style.opacity = 1 - rise / 100;
+    if (rise >= 100) {
+      clearInterval(interval);
+      cat.remove();
+    }
+  }, 30);
+}
+</script>
+
+<script>
 // initialize important variables to manage calculations
 var firstNumber = null;
 var operator = null;
