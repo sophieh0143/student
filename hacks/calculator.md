@@ -2,7 +2,7 @@
 title: JS Calculator
 comments: true
 hide: true
-layout: base
+layout: opencs
 description: A common way to become familiar with a language is to build a calculator.  This calculator shows off button with actions.
 permalink: /calculator
 ---
@@ -18,31 +18,93 @@ Hack 3: Implement 1 number operation (ie SQRT)
 HTML implementation of the calculator. 
 -->
 
-<!-- 
-    Style and Action are aligned with HRML class definitions
-    style.css contains majority of style definition (number, operation, clear, and equals)
-    - The div calculator-container sets 4 elements to a row
-    Background is credited to Vanta JS and is implemented at bottom of this page
--->
 <style>
-  .calculator-output {
-    /*
-      calulator output
-      top bar shows the results of the calculator;
-      result to take up the entirety of the first row;
-      span defines 4 columns and 1 row
-    */
-    grid-column: span 4;
-    grid-row: span 1;
-  
-    border-radius: 10px;
-    padding: 0.25em;
-    font-size: 20px;
-    border: 5px solid black;
-  
-    display: flex;
-    align-items: center;
+  /* calculator container with rainbow gradient */
+  .calculator-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-gap: 10px; /* space between buttons */
+    padding: 20px;
+    background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
+    border-radius: 15px;
+    width: 320px; /* set a fixed width */
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
   }
+
+  /* output screen */
+  .calculator-output {
+    grid-column: span 4; /* make output stretch across all 4 columns */
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    text-align: right;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #333;
+  }
+
+  /* number buttons */
+  .calculator-number {
+    background-color: #333;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .calculator-number:hover {
+    background-color: #555;
+  }
+
+  /* operation buttons */
+  .calculator-operation {
+    background-color: #f39c12;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .calculator-operation:hover {
+    background-color: #d35400;
+  }
+
+  /* clear button */
+  .calculator-clear {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .calculator-clear:hover {
+    background-color: #c0392b;
+  }
+
+  /* equals button */
+  .calculator-equals {
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .calculator-equals:hover {
+    background-color: #1e8449;
+  }
+
+  /* vanta animation fix */
   canvas {
     filter: none;
   }
@@ -57,8 +119,8 @@ HTML implementation of the calculator.
       <div class="calculator-number">1</div>
       <div class="calculator-number">2</div>
       <div class="calculator-number">3</div>
-      <div class="calculator-operation">+</div>
       <!--row 2-->
+      <div class="calculator-operation">+</div>
       <div class="calculator-number">4</div>
       <div class="calculator-number">5</div>
       <div class="calculator-number">6</div>
@@ -97,17 +159,17 @@ numbers.forEach(button => {
 });
 
 // Number action
-function number (value) { // function to input numbers into the calculator
+function number (value) { 
     if (value != ".") {
-        if (nextReady == true) { // nextReady is used to tell the computer when the user is going to input a completely new number
+        if (nextReady == true) {
             output.innerHTML = value;
-            if (value != "0") { // if statement to ensure that there are no multiple leading zeroes
+            if (value != "0") {
                 nextReady = false;
             }
         } else {
-            output.innerHTML = output.innerHTML + value; // concatenation is used to add the numbers to the end of the input
+            output.innerHTML = output.innerHTML + value;
         }
-    } else { // special case for adding a decimal; can't have two decimals
+    } else {
         if (output.innerHTML.indexOf(".") == -1) {
             output.innerHTML = output.innerHTML + value;
             nextReady = false;
@@ -123,14 +185,13 @@ operations.forEach(button => {
 });
 
 // Operator action
-function operation (choice) { // function to input operations into the calculator
-    if (firstNumber == null) { // once the operation is chosen, the displayed number is stored into the variable firstNumber
+function operation (choice) { 
+    if (firstNumber == null) {
         firstNumber = parseInt(output.innerHTML);
         nextReady = true;
         operator = choice;
-        return; // exits function
+        return;
     }
-    // occurs if there is already a number stored in the calculator
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML)); 
     operator = choice;
     output.innerHTML = firstNumber.toString();
@@ -138,7 +199,7 @@ function operation (choice) { // function to input operations into the calculato
 }
 
 // Calculator
-function calculate (first, second) { // function to calculate the result of the equation
+function calculate (first, second) { 
     let result = 0;
     switch (operator) {
         case "+":
@@ -167,7 +228,7 @@ equals.forEach(button => {
 });
 
 // Equal action
-function equal () { // function used when the equals button is clicked; calculates equation and displays it
+function equal () { 
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML));
     output.innerHTML = firstNumber.toString();
     nextReady = true;
@@ -181,16 +242,14 @@ clear.forEach(button => {
 });
 
 // A/C action
-function clearCalc () { // clears calculator
+function clearCalc () { 
     firstNumber = null;
     output.innerHTML = "0";
     nextReady = true;
 }
 </script>
 
-<!-- 
-Vanta animations just for fun, load JS onto the page
--->
+<!-- Vanta animations -->
 <script src="{{site.baseurl}}/assets/js/three.r119.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/vanta.halo.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/vanta.birds.min.js"></script>
@@ -198,18 +257,13 @@ Vanta animations just for fun, load JS onto the page
 <script src="{{site.baseurl}}/assets/js/vanta.rings.min.js"></script>
 
 <script>
-// setup vanta scripts as functions
 var vantaInstances = {
   halo: VANTA.HALO,
   birds: VANTA.BIRDS,
   net: VANTA.NET,
   rings: VANTA.RINGS
 };
-
-// obtain a random vanta function
 var vantaInstance = vantaInstances[Object.keys(vantaInstances)[Math.floor(Math.random() * Object.keys(vantaInstances).length)]];
-
-// run the animation
 vantaInstance({
   el: "#animation",
   mouseControls: true,
