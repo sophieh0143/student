@@ -10,6 +10,7 @@ Hi! My name is Sophie.
 
 # Popcorn Hack 1
 ## Within the first code cell, here is my edited code! -->  In a juypter notebook file, you can run this code in developer tools console!
+
 %%javascript
 // Step 1: Make some variables
 let name = "Sam";
@@ -32,6 +33,7 @@ console.log("Next year I will be 11 years old"); // <-- finish this line!
 
 # Popcorn Hack 2
 ## Within the second code cell, here is my edited code! --> In a juypter notebook file, you can run this code in developer tools console!
+
 %%javascript
 // Step 1: Define the Animal class
 class Animal {
