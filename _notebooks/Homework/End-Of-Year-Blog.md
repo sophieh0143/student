@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Strings HW :)
-description:  End of Year Blog
+title: End of Year Blog
+description:  End Of Year Blog
 categories: ['Homework']
-permalink: /Blog-end
+permalink: /End-Of-Yeark-Blog
 author: Sophie Haas
 ---
 
