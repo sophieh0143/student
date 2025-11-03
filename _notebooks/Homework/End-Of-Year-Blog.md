@@ -1,11 +1,13 @@
 ---
 layout: post
-title: End Of Year Blog
-permalink: /blog/
-comments: true
+title: Strings HW :)
+description:  End of Year Blog
+categories: ['Homework']
+permalink: /Blog-end
+author: Sophie Haas
 ---
 
-## As a conversation Starter
+## Welcome!
 
 Here are some places I have lived.
 
