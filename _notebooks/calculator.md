@@ -1,46 +1,25 @@
 ---
-layout: post
-title: End Game Blog
-categories: ['blogs']
-permalink: /endblog
+title: JS Calculator
+comments: true
+hide: true
+layout: base
+description: A common way to become familiar with a language is to build a calculator.  This calculator shows off button with actions.
+permalink: /calculator
 ---
-# Game Blog
-## Have I Changed?
-In the beginning of this trimester, I came into this class very, very stressed. I have worked with some light coding in the past, but it has always frusterated me. 
-
-I hate not knowing how things work, and I get stressed because of that. But latley, in this class, I have learned to deal with stress in a healthy way! If you show up to class, that isn't learning. If you actually give yourself difficult things to solve, albeit some hard things, you can actually learn. 
-
-When you code, it is a lot of trial and error. You code something, then test it. It fails, you go back to troubleshooting. This can be a long, grueling process, but when something works? That feeling is incredible. You can feel so accomplished, and so proud.
-
-An example of one of these moments was when we completed one of our first assignments in this class: About Me blog.
-
-I struggled until the late hours of the night until I completed it. When I finally deployed it on my student repo, I felt so accomplished and happy seeing my final project work.
-
-In this class I have been VERY stressed, but in the long run it was worth the things I learned. 
-
-#### So in short, yes; I think I have changed a lot.
-
-![Stressed student being chill](../images/chillguy.jpeg)
-
-The above image of the chill guy represents how I dealt with stress.
-
-## Key Takeaways
-#### Sprint 1: Tools Setup
-In 
-make, commit, virtual enviro, 
 
 
+<!--
+Hack 0: Right justify result
+Hack 1: Test conditions on small, big, and decimal numbers, report on findings. Fix issues.
+Hack 2: Add the common math operation that is missing from calculator
+Hack 3: Implement 1 number operation (ie SQRT)
+-->
 
 
-juypter notebooks, bundall installll
+<!--
+HTML implementation of the calculator.
+-->
 
-
-// Remember key things from 3 sprints (tools, Fundamentals of Javascript, Quest of spook Gamify)
-// How N@tM went? Did you get a comment or two you liked
-// What do you want to do next on project, given time?
-// What do you want to learn next in Compsci?
-// Analytics reveiw
-// Something cool, you want to tell
 
 <style>
  /* calculator container with rainbow gradient */
@@ -341,6 +320,3 @@ vantaInstance({
  gyroControls: false
 });
 </script>
-
-
-
